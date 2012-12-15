@@ -33,7 +33,7 @@ done
 
 sed -i 's|^#.*$||g' $TMP_TOR_LIST
 
-# Block the contents of the list in top
+# Block the contents of the list in iptables
 iptables -F $CHAIN_NAME
 
 for IP in $(cat $TMP_TOR_LIST | uniq | sort)
