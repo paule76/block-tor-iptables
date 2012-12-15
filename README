@@ -1,0 +1,12 @@
+This is a cron-service that blocks all tor users from accessing your server on
+a set of ports. This is meant to be run on Unix-like systems.
+
+It was derived from:
+   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
+
+The cron-service.sh script accepts an arbitrary number of arguments. Each argument is
+a port number that you want to block tor users on.
+
+If you are unfamiliar with cron, perhaps try reading about it:
+   http://en.wikipedia.org/wiki/Cron
+   http://www.adminschoice.com/crontab-quick-reference
