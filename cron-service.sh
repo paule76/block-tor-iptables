@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 if [ "$USER" != "root" ]; then
     echo "Must be run as root."
     exit 1
@@ -12,7 +10,7 @@ if [ "$1" == "" ]; then
     exit 1
 fi 
 
-CHAIN_NAME="TOR"
+CHAIN_NAME="INPUT"
 TMP_TOR_LIST="/tmp/temp_tor_list"
 IP_ADDRESS=$(ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}')
 
@@ -44,7 +42,5 @@ do
 done
 
 iptables-save
-
-#echo iptables -A $CHAIN_NAME -j RETURN
 
 
