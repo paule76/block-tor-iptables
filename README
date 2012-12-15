@@ -1,12 +1,17 @@
-This is a cron-service that blocks all tor users from accessing your server on
-a set of ports. This is meant to be run on Unix-like systems.
-
-It was derived from:
-   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
+This is a cron-service that blocks all tor users from accessing your server. Make for
+systems that support iptables.
 
 The cron-service.sh script accepts an arbitrary number of arguments. Each argument is
-a port number that you want to block tor users on.
+a port number that you want query for tor IPS to block. You must specify at least one.
 
-If you are unfamiliar with cron, perhaps try reading about it:
+The code was derived from:
+   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
+
+If you are unfamiliar with cron, perhaps read about it:
    http://en.wikipedia.org/wiki/Cron
    http://www.adminschoice.com/crontab-quick-reference
+
+Note:
+  The script analyzes the 'eth0' network interface to obtain your IP address, which
+  is required to query the tor bulk exit list. If your network interface is not
+  'eth0' (perhaps you are running on wlan0, eth1, avian0), then edit the script.
