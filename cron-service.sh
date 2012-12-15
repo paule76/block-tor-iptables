@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$USER" && "$USER" != "root" ]]; then
+if [[ "$USER" != "" && "$USER" != "root" ]]; then
     echo "Must be run as root (you are $USER)."
     exit 1
 fi
