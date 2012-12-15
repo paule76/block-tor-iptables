@@ -40,10 +40,7 @@ iptables -F $CHAIN_NAME
 
 for IP in $(cat $TMP_TOR_LIST | uniq | sort)
 do
-    for PORT in "$@"
-    do
-	iptables -A $CHAIN_NAME -s $IP -p tcp --destination-port $PORT -j DROP
-    done
+    iptables -A $CHAIN_NAME -s $IP -j DROP
 done
 
 iptables-save
