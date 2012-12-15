@@ -41,6 +41,7 @@ do
     iptables -A $CHAIN_NAME -s $IP -j DROP
 done
 
-iptables-save
+iptables-save >> /var/log/block-tor-iptables.log
+
 
 
