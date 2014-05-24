@@ -7,7 +7,7 @@ The cron-service.sh script accepts an arbitrary number of arguments. Each positi
 
     /root/block-tor-iptables/cron-service.sh 80 6667
 
-If you are unfamiliar with cron, you may read about it:
+If you are unfamiliar with cron, you may find it useful to read about:
 *   http://en.wikipedia.org/wiki/Cron
 *   http://www.adminschoice.com/crontab-quick-reference
 
