@@ -16,5 +16,5 @@ If you are unfamiliar with cron, you may find it useful to read about:
 *   The script analyzes the 'eth0' network interface to obtain your IP address, which is required to query the tor bulk exit list. If your network interface is not 'eth0' (perhaps you are running on wlan0, eth1, avian0), then edit the script.
 
 ## Credits
-The code was derived from:
-   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
+The code was derived from:  
+*   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
