@@ -12,7 +12,7 @@ If you are unfamiliar with cron, you may find it useful to read about:
 *   http://www.adminschoice.com/crontab-quick-reference
 
 ## Notes
-*   The script must be run as root. On Ubuntu, if you add it to your crontab as root with ``crontab -e``, it is necessary to prefix the command with "sudo", for some  reason.
+*   The script must be run as root. On Ubuntu, if you add it to your crontab as root with ``crontab -e``, it is necessary to prefix the command with "sudo".
 *   The script analyzes the 'eth0' network interface to obtain your IP address, which is required to query the tor bulk exit list. If your network interface is not 'eth0' (perhaps you are running on wlan0, eth1, avian0), then edit the script.
 
 ## Credits
