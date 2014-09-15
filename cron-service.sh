@@ -20,7 +20,7 @@ if ! iptables -L "$CHAIN_NAME" -n >/dev/null 2>&1 ; then
     iptables -N "$CHAIN_NAME" >/dev/null 2>&1
 fi
 
-# Download the exist list from the tor project, build the temp file. Also
+# Download the exit list from the tor project, build the temp file. Also
 # filter out any commented (#) lines.
 rm -f $TMP_TOR_LIST
 touch $TMP_TOR_LIST
