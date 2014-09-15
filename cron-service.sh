@@ -1,18 +1,18 @@
 #!/bin/bash
 
-if [ "$USER" != "root" ]; then
-    echo "Must be run as root (you are $USER)."
-    exit 1
-fi
+readonly CHAIN_NAME="TOR"
+readonly TMP_TOR_LIST="/tmp/temp_tor_list"
+readonly IP_ADDRESS=$(ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}')
 
 if [ "$1" == "" ]; then
     echo "$0 port [port [port [...]]]"
+    echo
+    echo "First, you must manually create the iptable:"
+    echo "  iptables -N $CHAIN_NAME"
+    echo "  iptables -I INPUT 1 -j $CHAIN_NAME"
     exit 1
 fi 
 
-CHAIN_NAME="INPUT"
-TMP_TOR_LIST="/tmp/temp_tor_list"
-IP_ADDRESS=$(ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}')
 
 # Create tor chain if it doesn't exist. This is basically a grouping of
 # filters within iptables.
