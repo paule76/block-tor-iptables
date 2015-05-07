@@ -36,7 +36,7 @@ sed -i 's|^#.*$||g' $TMP_TOR_LIST
 # Block the contents of the list in iptables
 iptables -F $CHAIN_NAME
 
-for IP in $(cat $TMP_TOR_LIST | uniq | sort)
+for IP in $(cat $TMP_TOR_LIST | sort -u)
 do
     iptables -A $CHAIN_NAME -s $IP -j DROP
 done
