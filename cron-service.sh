@@ -2,7 +2,6 @@
 
 readonly CHAIN_NAME="TOR"
 readonly TMP_TOR_LIST="/tmp/temp_tor_list"
-#readonly IP_ADDRESS=$(ifconfig eth0 | awk '/inet addr/ {split ($2,A,":"); print A[2]}')
 # get external IP in private lan
 readonly IP_ADDRESS=$(wget -q -O - "http://canihazip.com/s" -U NoSuchBrowser/1.0)
 #	Which chain 
@@ -13,10 +12,6 @@ readonly CHAIN='INPUT'
 
 if [ "$1" == "" ]; then
     echo "$0 port [port [port [...]]]"
-    echo
-    echo "First, you must manually create the iptable:"
-    echo "  iptables -N $CHAIN_NAME"
-    echo "  iptables -I $CHAIN 1 -j $CHAIN_NAME"
     exit 1
 fi 
 
@@ -25,7 +20,9 @@ fi
 # filters within iptables.
 if ! iptables -L "$CHAIN_NAME" -n >/dev/null 2>&1 ; then
     iptables -N "$CHAIN_NAME" >/dev/null 2>&1
-    # Logic if $CHAIN_NAME not exists then the role can also not exits
+fi
+# Create $CHAIN_NAME Rule in $CHAIN
+if ! iptables -L "$CHAIN" -n |grep "$CHAIN_NAME" >/dev/null 2>&1 ; then
     iptables -I "$CHAIN" 1 -j "$CHAIN_NAME" >/dev/null 2>&1
 fi
 
@@ -51,6 +48,3 @@ do
 done
 
 iptables-save
-
-
-
