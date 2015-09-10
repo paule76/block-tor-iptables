@@ -3,11 +3,6 @@
 
 This is a cron-service that blocks all Tor users from accessing your server. Made for systems that support iptables.
 
-First, you must manually create the iptable:
-
-    iptables -N TOR
-    iptables -I INPUT 1 -j TOR
-
 The cron-service.sh script accepts an arbitrary number of arguments. Each positional argument is a port number that you want query for Tor IPs to block. You must specify at least one. For example, the following specifies port 80 and 6667:
 
     /root/block-tor-iptables/cron-service.sh 80 6667
