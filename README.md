@@ -17,4 +17,4 @@ If you are unfamiliar with cron, you may find it useful to read about:
 
 ## Credits
 The code was derived from:  
-*   http://www.brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
+*   https://web.archive.org/web/20111229215840/https://brianhare.com/wordpress/2011/03/02/block-tor-exit-nodes-using-bash-script/
